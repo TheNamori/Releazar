@@ -26,7 +26,7 @@ jobs:
     - name: Build and test with Rake
       env:
         PGHOST: 127.0.0.1
-        PGUSER: mlamboia
+        PGUSER: postgres
         RAILS_ENV: test
       run: |
         sudo apt-get -yqq install libpq-dev
