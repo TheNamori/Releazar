@@ -10,5 +10,6 @@ RSpec.describe Client, type: :model do
     expect(client.deliverer_fee).to eq(3)
     expect(client.phone).to eq('984160601')
     expect(client.blocked).to eq(false)
+    # hi
   end
 end
