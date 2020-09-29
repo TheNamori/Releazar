@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @deliverer.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @deliverer.phone %>
+</p>
+
+<p>
+  <strong>Blocked:</strong>
+  <%= @deliverer.blocked %>
+</p>
+
+<%= link_to 'Edit', edit_deliverer_path(@deliverer) %> |
+<%= link_to 'Back', deliverers_path %>
