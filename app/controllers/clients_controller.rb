@@ -2,9 +2,11 @@ class ClientsController < ApplicationController
   before_action :set_client, only: %i[show edit update destroy]
 
   # GET /clients
-  # GET /clients.json
+  # GET localhost:3000/
+  # action
   def index
     @clients = Client.all
+    @batata = batata(@clients)
   end
 
   # GET /clients/1
@@ -69,5 +71,9 @@ class ClientsController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def client_params
     params.require(:client).permit(:name, :city, :neighborhood, :address, :deliverer_fee, :phone, :order, :blocked)
+  end
+
+  def batata
+    @batatas = %w[batata1 batata2]
   end
 end
