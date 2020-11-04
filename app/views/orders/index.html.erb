@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Deliverer</th>
+      <th>price</th>
+      <th>date</th>
+      <th>show</th>
+      <th>edit</th>
+      <th>delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.client.name %></td>
+        <td><%= order.deliverer.name %></td>
+        <td><%= order.order_total_price %></td>
+        <td><%= order.updated_at.strftime("%d/%m/%Y") %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_order_path %>

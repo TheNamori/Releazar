@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @order.client.name %>
+</p>
+<p>
+  <strong>Deliverer:</strong>
+  <%= @order.deliverer.name %>
+</p>
+<p>
+  <table>
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Preço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order.ordered_products.each do |products|%>
+      <tr>
+        <th><%= products.product.name %></th>
+        <th><%= products.product.unit_price %></th>
+        <th><%= products.product_total_quantity %></th>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
+<p>
+  <strong> Quantidade Total de Produtos</strong>
+  <%= @order.products_total_quantity %>
+</p>
+<p>
+  <strong> Valor Total da Compra </strong>
+  <%= @order.order_total_price %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

@@ -22,12 +22,23 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+# Use datatables for table functions
+gem 'jquery-datatables-rails'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 gem 'unicorn'
+
+# Use enviroment variables
+gem 'dotenv-rails'
+
+# Use complex forms with nested fields
+gem 'cocoon'
+
+# Use complex forms with nested fields
+gem 'bootstrap'
 
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
@@ -43,7 +54,7 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  # Rspec 
+  # Rspec
   gem 'rspec-rails'
 end
 

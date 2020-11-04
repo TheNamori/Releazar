@@ -4,10 +4,11 @@ class CreateClients < ActiveRecord::Migration
       t.string :name
       t.string :city
       t.string :neighborhood
-      t.string :address
-      t.integer :deliverer_fee
+      t.string :street
+      t.string :street_number
+      t.string :cep
       t.string :phone
-      t.string :order
+      t.string :deliverer_fee
       t.boolean :blocked, default: false
 
       t.timestamps null: false

@@ -6,7 +6,6 @@ class ClientsController < ApplicationController
   # action
   def index
     @clients = Client.all
-    @batata = batata(@clients)
   end
 
   # GET /clients/1
@@ -70,10 +69,16 @@ class ClientsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def client_params
-    params.require(:client).permit(:name, :city, :neighborhood, :address, :deliverer_fee, :phone, :order, :blocked)
-  end
-
-  def batata
-    @batatas = %w[batata1 batata2]
+    params.require(:client).permit(
+      :name,
+      :city,
+      :neighborhood,
+      :street,
+      :street_number,
+      :cep,
+      :deliverer_fee,
+      :phone,
+      :blocked
+    )
   end
 end

@@ -1,49 +1,57 @@
 <%= form_for(@client) do |f| %>
-  <% if @client.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
+<% if @client.errors.any? %>
+<div id="error_explanation" class="alert alert-danger" role="alert">
+  <h2><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h2>
 
-      <ul>
-      <% @client.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% @client.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :neighborhood %><br>
-    <%= f.text_field :neighborhood %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :deliverer_fee %><br>
-    <%= f.text_field :deliverer_fee %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :order %><br>
-    <%= f.text_field :order %>
-  </div>
-  <div class="field">
-    <%= f.label :blocked %><br>
-    <%= f.text_field :blocked %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="field">
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label :city %><br>
+  <%= f.text_field :city %>
+</div>
+<div class="field">
+  <%= f.label :neighborhood %><br>
+  <%= f.text_field :neighborhood %>
+</div>
+<div class="field">
+  <%= f.label :street %><br>
+  <%= f.text_field :street %>
+</div>
+<div class="field">
+  <%= f.label :street %><br>
+  <%= f.text_field :street %>
+</div>
+<div class="field">
+  <%= f.label :street_number %><br>
+  <%= f.text_field :street_number %>
+</div>
+<div class="field">
+  <%= f.label :cep %><br>
+  <%= f.text_field :cep %>
+</div>
+<div class="field">
+  <%= f.label :phone %><br>
+  <%= f.text_field :phone %>
+</div>
+<div class="field">
+  <%= f.label :deliverer_fee %><br>
+  <%= f.text_field :deliverer_fee %>
+</div>
+<div class="field">
+  <%= f.label :blocked %><br>
+  <%= f.check_box :blocked %>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
 <% end %>

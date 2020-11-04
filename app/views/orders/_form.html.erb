@@ -1,0 +1,39 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class='col-12'>
+      <%= f.label :client_id %>
+      <div class='form-control'><%= @order.client.name %></div>
+    </div
+
+  <div id='deliverer'  class="pl-4">
+    <%= f.label :deliverer_id %>
+  </div>
+  <div class='field m-1 col-md-3'>
+      <%= f.collection_select :deliverer_id, @deliverers_selection, :id, :name, {include_blank: true},class: "form-control" %>
+  </div>
+
+  <div>
+    <%= link_to_add_association('Adicionar', f, :ordered_products, partial: 'ordered_products_fields' ) %>
+  </div>
+
+  <div id='ordered_products'>
+    <%= f.fields_for :ordered_products do |ordered_products_fields| %>
+      <%= render partial: "ordered_products_fields", locals: { f: ordered_products_fields } %>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit, name: "client_id", value: params[:client_id] %>
+  </div>
+<% end %>

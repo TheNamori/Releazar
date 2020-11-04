@@ -1,36 +1,37 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Clients</h1>
-
-<table>
+<table id='clients-list' class='table table-hover display responsive no-wrap' data-order='[[ 1, "asc" ]]'>
   <thead>
     <tr>
       <th>Name</th>
       <th>City</th>
       <th>Neighborhood</th>
-      <th>Address</th>
+      <th>street</th>
       <th>Deliverer fee</th>
       <th>Phone</th>
-      <th>Order</th>
       <th>Blocked</th>
-      <th colspan="3"></th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      <th>Order</th>
     </tr>
   </thead>
 
   <tbody>
     <% @clients.each do |client| %>
     <tr>
-      <td><%= client.name %></td>
+      <td data-class-name="priority" ><%= client.name %></td>
       <td><%= client.city %></td>
       <td><%= client.neighborhood %></td>
-      <td><%= client.address %></td>
+      <td><%= client.street %></td>
       <td><%= client.deliverer_fee %></td>
       <td><%= client.phone %></td>
-      <td><%= client.order %></td>
       <td><%= client.blocked %></td>
       <td><%= link_to 'Show', client %></td>
       <td><%= link_to 'Edit', edit_client_path(client) %></td>
       <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'New Order', new_order_path(:client_id => client.id) %></td>
     </tr>
     <% end %>
     <h1><%= @test %></h1>
@@ -40,3 +41,11 @@
 <br>
 
 <%= link_to 'New Client', new_client_path %>
+
+<script>
+$(document).ready(function() {
+  $("#clients-list").dataTable({
+      responsive: true
+  });
+});
+</script>
