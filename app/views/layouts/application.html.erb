@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang='pt-BR' class='h-100'>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Releazar</title>
+  <%= favicon_link_tag asset_path('logo.jpg') %>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-<%= yield %>
-
+<body class='container-fluid h-100 bg-secondary p-0'>
+  <div class='row h-100 mr-0'>
+    <div id='nav' class='col-1'>
+      <%= render 'layouts/navbar' %>
+    </div>
+    <div class='col'>
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>

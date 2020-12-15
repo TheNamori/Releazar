@@ -5,7 +5,7 @@ class DeliverersController < ApplicationController
   # GET /deliverers.json
   def index
     @deliverers = Deliverer.all
-  end 
+  end
 
   # GET /deliverers/1
   # GET /deliverers/1.json
@@ -23,12 +23,26 @@ class DeliverersController < ApplicationController
 
   # POST /deliverers
   # POST /deliverers.json
-  def create
+  def create1
     @deliverer = Deliverer.new(deliverer_params)
 
     respond_to do |format|
       if @deliverer.save
         format.html { redirect_to @deliverer, notice: 'Deliverer was successfully created.' }
+        format.json { render :show, status: :created, location: @deliverer }
+      else
+        format.html { render :new }
+        format.json { render json: @deliverer.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def create
+    @deliverer = Deliverer.new(deliverer_params)
+
+    respond_to do |format|
+      if @deliverer.save
+        format.html { redirect_to @client, notice: 'Deliverer was successfully created.' }
         format.json { render :show, status: :created, location: @deliverer }
       else
         format.html { render :new }
@@ -69,6 +83,6 @@ class DeliverersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def deliverer_params
-      params.require(:deliverer).permit(:name, :phone, :blocked)
+      params.permit(:name, :phone, :blocked)
     end
 end

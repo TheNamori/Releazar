@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Use datatables for table functions
-gem 'jquery-datatables-rails'
+gem 'jquery-datatables'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
@@ -34,8 +34,14 @@ gem 'unicorn'
 # Use enviroment variables
 gem 'dotenv-rails'
 
+# Use jquery ui
+gem 'jquery-ui-rails'
+
 # Use complex forms with nested fields
 gem 'cocoon'
+
+# Use Icons
+gem "font-awesome-rails"
 
 # Use complex forms with nested fields
 gem 'bootstrap'

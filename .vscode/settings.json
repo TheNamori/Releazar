@@ -3,5 +3,6 @@
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.includeLanguages": {
     "erb": "html"
-  }
+  },
+  "i18n-ally.keystyle": "flat"
 }

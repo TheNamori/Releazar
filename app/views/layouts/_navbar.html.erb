@@ -1,0 +1,47 @@
+
+<div class='nav .d-none .d-md-block bg-primary d-flex flex-column align-items-end h-100'>
+  <div class='nav-item ml-auto mr-auto'>
+    <%= link_to clients_path, class:'pt-4 pb-4 d-flex', data: { turbolinks: false } do %>
+      <%= image_tag  "logo.jpg", class: 'rounded-circle logo' %>
+    <% end %>
+  </div>
+  <div class='nav-item'>
+    <%= link_to clients_path, class: 'nav-link', data: { turbolinks: false } do %>
+      <%= fa_icon "home", text: "Início"%>
+    <% end %>
+  </div>
+  <div class='nav-item'>
+    <%= link_to deliverers_path, class: 'nav-link', data: { turbolinks: false } do %>
+      <%= fa_icon "exchange", text: "Pedidos"%>
+    <% end %>
+  </div>
+  <div class='nav-item'>
+    <%= link_to products_path, class: 'nav-link', data: { turbolinks: false } do %>
+      <%= fa_icon "list", text: "Cardápio"%>
+    <% end %>
+  </div>
+  <div class='nav-item'>
+    <%= link_to clients_path, class: 'nav-link', data: { turbolinks: false } do %>
+      <%= fa_icon "users", text: "Clientes"%>
+    <% end %>
+  </div>
+    <div class='nav-item'>
+    <%= link_to deliverers_path, class: 'nav-link', data: { turbolinks: false } do %>
+      <%= fa_icon "truck", text: "Entregadores"%>
+    <% end %>
+  </div>
+  <div class='nav-item'>
+    <%= link_to products_path, class: 'nav-link', data: { turbolinks: false } do %>
+      <%= fa_icon "dollar", text: "Fechamento"%>
+    <% end %>
+  </div>
+  <div class='nav-item mt-auto'>
+    <%= link_to clients_path, class: 'nav-link', data: { turbolinks: false } do %>
+      <%= fa_icon "cog", text: "Configurações"%>
+    <% end %>
+  </div>
+</div>
+
+
+
+

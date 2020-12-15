@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-  before_action :set_client, only: %i[show edit update destroy]
+  before_action :set_client, only: %i[show edit update destroy block]
 
   # GET /clients
   # GET localhost:3000/
@@ -53,10 +53,12 @@ class ClientsController < ApplicationController
   # DELETE /clients/1
   # DELETE /clients/1.json
   def destroy
-    @client.destroy
+    @client.blocked = true
     respond_to do |format|
-      format.html { redirect_to clients_url, notice: 'Client was successfully destroyed.' }
-      format.json { head :no_content }
+      if @client.save
+        format.html { redirect_to clients_path, notice: 'Cliente excluido com sucesso' }
+        format.json { head :no_content }
+      end
     end
   end
 

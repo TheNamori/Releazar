@@ -1,2 +1,17 @@
-@import "bootstrap";
+$primary: #444444;
+$secondary: #F0EDED;
+$white: #fafafa;
+
+* {
+  font-family: 'fira-code';
+  font-size: 16px;
+};
+
+@import 'navbar';
+@import 'fonts';
+@import 'bootstrap';
+@import 'datatables';
+@import 'font-awesome';
+@import 'jquery-ui';
+
 

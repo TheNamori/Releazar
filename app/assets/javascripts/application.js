@@ -13,10 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery3
+//= require jquery-ui
 //= require turbolinks
 //= require cocoon
 //= require popper
 //= require bootstrap
-//= require dataTables/jquery.dataTables
-//= require dataTables/extras/dataTables.responsive
-//= require dataTables/jquery.dataTables
+//= require datatables
+//= require main

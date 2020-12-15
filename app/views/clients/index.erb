@@ -1,0 +1,70 @@
+<p id='notice'><%= notice %></p>
+
+<h1>Listing Clients</h1>
+
+<%= link_to 'New Client', new_client_path %>
+<div class='table-responsive'>
+  <table id='clients-list' class='table table-hover'>
+    <thead>
+      <tr>
+        <th><%= @clients.model.human_attribute_name('name') %></th>
+        <th><%= @clients.model.human_attribute_name('city') %></th>
+        <th><%= @clients.model.human_attribute_name('neighborhood') %></th>
+        <th><%= @clients.model.human_attribute_name('street') %></th>
+        <th><%= @clients.model.human_attribute_name('phone') %></th>
+        <th><%= t(:edit) %></th>
+        <th><%= t(:destroy) %></th>
+        <th><%= @clients.model.human_attribute_name('order') %></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @clients.each do |client| %>
+      <tr>
+        <td data-class-name='priority'><%= client.name %></td>
+        <td><%= client.city %></td>
+        <td><%= client.neighborhood %></td>
+        <td><%= client.street %></td>
+        <td><%= client.phone %></td>
+        <td><%= link_to (fa_icon 'pencil'), edit_client_path(client), class: "btn btn-sm btn-outline-primary" %></td>
+        <td>
+        <% button_to 'hi'
+          method: :block, data: {
+          confirm: "Tem certeza que deseja excluir o cliente #{ client.name }?"
+          }, class: "btn btn-sm btn-outline-primary" %>
+        </td>
+        <td><%= link_to (fa_icon 'exchange'), new_order_path(client_id: client.id), class: "btn btn-sm btn-outline-primary" %></td>
+      </tr>
+      <% end %>
+      <h1><%= @test %></h1>
+    </tbody>
+  </table>
+</div>
+
+<script>
+$(document).ready(function() {
+  $('#clients-list').dataTable({
+    info: false,
+    pageLength: 25,
+    lengthChange: false,
+    pagingType: 'full_numbers',
+    stateSave: true,
+    columnDefs: [{
+      orderable: false,
+      targets: [5, 6, 7, 8]
+    }],
+    language: {
+      paginate: {
+        first: '«',
+        previous: '‹',
+        next: '›',
+        last: '»'
+      },
+      EmptyTable: 'Nenhum registro encontrado',
+      LoadingRecords: 'Carregando...',
+      Processing: 'Processando...',
+      ZeroRecords: 'Nenhum registro encontrado'
+    }
+  });
+});
+</script>
