@@ -28,10 +28,7 @@
         <td><%= client.phone %></td>
         <td><%= link_to (fa_icon 'pencil'), edit_client_path(client), class: "btn btn-sm btn-outline-primary" %></td>
         <td>
-        <% button_to 'hi'
-          method: :block, data: {
-          confirm: "Tem certeza que deseja excluir o cliente #{ client.name }?"
-          }, class: "btn btn-sm btn-outline-primary" %>
+
         </td>
         <td><%= link_to (fa_icon 'exchange'), new_order_path(client_id: client.id), class: "btn btn-sm btn-outline-primary" %></td>
       </tr>
