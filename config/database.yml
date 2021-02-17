@@ -15,4 +15,4 @@ test:
   database: releazar_test
 production:
   <<: *default
-  database: <%= ENV['DATABASE_NAME'] %>
+  database: releazar
